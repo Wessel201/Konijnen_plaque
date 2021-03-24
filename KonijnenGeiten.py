@@ -26,12 +26,10 @@ Pg_arr[0] = Pg_init                        #add the initial Pg to the array
 bk = 0.1
 ck = bk/12395840734
 dk = 0.0002737
-#ak = 0.0002737/700
 ak = 0
 bg = 1/150
 cg = bg/12395840734
 dg = 1/4197.5
-#ag = dg/700
 ag = 0
 
 def derifk(xk, xg):
