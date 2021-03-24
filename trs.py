@@ -12,7 +12,7 @@ Dt = 1                                # timestep Delta t
 Pk_init = 13                            # initial population rabbits
 Pg_init = 0                            # initial population goats
 t_init = 0                              # initial time
-t_end = 250                               # stopping time
+t_end = 356                               # stopping time
 n_steps = int(round((t_end-t_init)/Dt)) # total number of timesteps
 
 t_arr = np.zeros(n_steps + 1)           # create an array of zeros for t
@@ -34,8 +34,8 @@ dg = 1/4197.5
 #ag = dg/700
 ag = 0
 
-def derifk(xk):
-	return (0.1-0.000312109862672)*xk
+def derifk(P):
+	return (0.1-0.000312109862672)*P*(1-(0.1-0.000312109862672)/12395840734*P)
 
 
 for i in range (1, n_steps + 1):
@@ -50,7 +50,7 @@ for i in range (1, n_steps + 1):
 fig = plt.figure()                      # create figure
 plt.plot(t_arr, Pk_arr, linewidth = 3, label = "Rabbits")   # plot population vs. time
 
-plt.title('Solution for dP/dt = (0.1-0.000312109862672)P', fontsize = 10)  
+plt.title('Solution for dP/dt = R*P*(1-R/12395840734*P)', fontsize = 10)  
 plt.xlabel('t (in days)', fontsize = 10)
 plt.ylabel('P(t)', fontsize = 10)
 
@@ -60,4 +60,4 @@ plt.legend()
 plt.grid(True)                          # show grid                # define the axes
 plt.show()                              # show the plot
 # save the figure as .jpg
-fig.savefig('unr_rabbitts.jpg', dpi=fig.dpi, bbox_inches = "tight")
+fig.savefig('logis.jpg', dpi=fig.dpi, bbox_inches = "tight")
