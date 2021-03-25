@@ -36,8 +36,67 @@ $$
 R = 0.1 - 0.000312109862672
 $$
 $$
-\frac{dP(t)}{dt} = RP(t)(1-\frac{R}{12 395 840 734}P)
+\frac{dP(t)}{dt} = RP(t)(1-\frac{P}{12 395 840 734})
 $$
 \\
 \includegraphics[scale=0.78]{Pictures/logis}
+\\
+
+From the graph we see that the model reaches an equilibrium around 12 395 840 734, which is what we expected and wanted. This can also be confirmed analytically 
+$$
+0= RP(t)(1-\frac{P(t)}{12 395 840 734})
+$$
+$$
+RP(t) = 0
+$$
+$$
+1-\frac{P(t)}{12 395 840 734} = 0
+$$
+$$
+P(t) = 12 395 840 734
+$$
+This shows that the equilibrium solutions are 0 and 12 395 840 734
+$$
+M = 12 395 840 734 
+$$
+$$
+\frac{dP(t)}{dt} = RP(t)(1 - \frac{1}{M}P(t))
+$$
+$$
+\frac{dP(t)}{P(t)(1 - \frac{1}{M}P(t))} = Rdt
+$$
+$$
+\frac{MdP(t)}{P(t)(M - P(t))} = Rdt
+$$
+$$
+dP(t)(\frac{-1}{P(t)} - \frac{1}{M -P(t)})   = Rdt
+$$
+$$
+\int{(\frac{1}{P(t)} - \frac{-1}{M -P(t)})dP(t) }  =\int{ R}dt
+$$
+$$
+\ln(P(t)) - \ln(M -P(t)) + c_1 = Rt +c_2
+$$
+
+$$
+ \ln(\frac{P(t)}{M -P(t)})  = Rt +c
+$$
+
+$$
+\frac{P(t)}{M -P(t)}= e^{Rt +c}
+$$
+
+$$
+P(t) = - \frac{Me^{Rt +c}}{1 - e^{Rt +c}}
+$$
+$$
+P(0)(1 - e^{c}) = -Me^{c}
+$$
+$$
+c = \ln(\frac{P(0)}{P(0)-M})
+$$
+$$
+P(t) =  \frac{MP(0)}{P(0)+(M - P(0))e^{-Rt}}
+$$
+
 \end{document}
