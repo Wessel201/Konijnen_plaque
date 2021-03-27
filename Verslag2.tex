@@ -98,5 +98,27 @@ $$
 $$
 P(t) =  \frac{MP(0)}{P(0)+(M - P(0))e^{-Rt}}
 $$
+\section{Introducing a preditor: The Red Fox}
+Australia 7 616 666 square kilometer land, of which 1 371 000 square kilometer is desert. Knowing that red foxes don't live in the desert, they have about 7 479 566 square kilometer land to live on. The red fox has a territory that ranges one to two miles from its home. Assuming that the territory of a red fox is circular with a radius of one mile, this means that the area a red fox needs is $\pi*1^2$ which is equal to about 3.14 square mile per fox. Converting this to square kilometer, the fox needs about 8.13 square kilometer of space. This means that Australia can house about 919 996 red foxes, without getting overcrowded. As foxes reproduce every 51 days and get on avarage 5 pups per two foxes, meaning that every fox wil get 2.5 pups in 51 days on avarage. This means that the birth rate is about 0.0245 pups per fox per day. Red foxes live nine years on avarage. This means that the death rate is about 0.0003044 deaths per fox per day.
+
+Let $R_f$ be the reproduction number.
+$$R_f = b_f - d_f$$
+$$b_f = 0.0245$$
+$$d_f = 0.0003044$$
+$$\frac{dP_f(t)}{dt} = R_fP_f(t)(1-\frac{P_f(t)}{M_f})$$
+$$M_f = 919996$$
+\\
+\includegraphics[scale=0.78]{Pictures/Foxes.png}
+\\
+From the graph we see that the model reaches an equilibrium around 919996, which is expected and wanted. This can also be confirmed analytically.
+$$0=R_fP_f(t)(1-\frac{P_f(t)}{M_f})$$
+$$R_fP_f(t)=0$$
+$$1-\frac{P_f(t)}{M_f}=0$$
+$$P_f(t)=M_f$$
+$$P_f(t)=919996$$
+This shows that the equilibrium solutions are 0 and 919996. Now adding the rabbits to the equation, we find that, as red foxes eat around 500 grams of food per day, a red fox needs 0.25 rabbits a day. This means that for every fox 0.25 rabbit die, on top of the constant death rate of the rabbits. This means that the derivative equation for the rabbits becomes
+$$\frac{dP_r(t)}{dt}=R_rP_r(t)(1-\frac{P_r(t)}{M_r})-0.25P_r(t)P_f(t)$$
+Where $P_r(t)$ is the amount of rabbits, $R_r$ the birthrate minus the deathrate of the rabbits and $M_r$ is the maximum amount of rabbits Australia can house.
+
 
 \end{document}
