@@ -116,9 +116,27 @@ $$R_fP_f(t)=0$$
 $$1-\frac{P_f(t)}{M_f}=0$$
 $$P_f(t)=M_f$$
 $$P_f(t)=919996$$
-This shows that the equilibrium solutions are 0 and 919996. Now adding the rabbits to the equation, we find that, as red foxes eat around 500 grams of food per day, a red fox needs 0.25 rabbits a day. This means that for every fox 0.25 rabbit die, on top of the constant death rate of the rabbits. This means that the derivative equation for the rabbits becomes
-$$\frac{dP_r(t)}{dt}=R_rP_r(t)(1-\frac{P_r(t)}{M_r})-0.25P_r(t)P_f(t)$$
-Where $P_r(t)$ is the amount of rabbits, $R_r$ the birthrate minus the deathrate of the rabbits and $M_r$ is the maximum amount of rabbits Australia can house.
+This shows that the equilibrium solutions are 0 and 919996. In an equilibrium situation, the extra deathrate due to lack of space can be found by the following formula, as the extra deathrate is dependent on both the maximum amount of foxes and the growth rate of the amount of foxes.
+$$\alpha = a_f * \overline{F}$$
+Where $\alpha$ is $b_f-d_f$, $a_f$ is the extra deathrate on top of the constant deathrate due to space limitations and $\overline{F}$ is the amount of foxes in the equilibrium situation where
+$$\overline{F} = 919996$$
+This means that we can find the $a_f$ with the following formula
+$$a_f = \frac{\alpha}{\overline{F}}$$
+With this can be found that $a_f = 0.000000063$. The extra birthrate dependent on the amount of food (namely rabbits) available can be found by
+$$\alpha + c_f*\overline{K}-a_f*\overline{F}=0$$
+As the extra birthrate should be depend on the amount of rabbits, amount of foxes, the extra deathrate and the growth rate of the foxes, where $c_f$ is the extra birthrate dependent on the amount of food and $\overline{K}$ is the amount of rabbits in the equilibrium situation where
+$$\overline{K}=12395840734$$
+This means that we can find $c_f$ with the following formula
+$$c_f=\frac{-\alpha+a_f*\overline{F}}{\overline{K}}$$
+So we find that $c_f=6.628*10^{-12}$. This means that the differential equation becomes 
+$$\frac{dP_f(t)}{dt}=(b_f-d_f)*P_f*(1-a_f)+c_f*P_f*P_k$$
+We find that, as red foxes eat around 500 grams of food per day, a red fox eats about 0.25 rabbits a day when available, but their diet is dependent on how easy accessable the rabbits are, so more rabbits, means it's easier for the foxes to eat he rabbits. We find the extra deathrate due to foxes with the following formula, as this is dependent on the amount of foxes and the amount of rabbits.
+$$a_k*\overline{F}*\overline{K}=0.25*\overline{F}$$
+So we find now that we can find the extra deaths of rabbits due to foxes with
+$$a_k=\frac{0.25}{\overline{K}}$$
+Which means that $a_k=2.0168*10^{-11}$.
+\\In the following graph the situation is plotted where there are 10000000000 rabbits and 919996 foxes, which is about the amount of rabbits Australia has when they had their big rabbit plague and the maximum amount of foxes that can live in Australia. In the graph one can see that due to the low maximum amount of foxes that can live in Australia, they don't do much to the rabbits, where they grow their amount to the equilibrium of $1.22228182*10^{10}$. The foxes have their equilibrium around 6 901 9790
+\includegraphics[scale=0.78]{Pictures/RabbitFoxes.png}
 
 
 \end{document}
