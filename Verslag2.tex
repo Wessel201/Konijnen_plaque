@@ -98,6 +98,39 @@ $$
 $$
 P(t) =  \frac{MP(0)}{P(0)+(M - P(0))e^{-Rt}}
 $$
+\section{Hunting}
+First we will explore one of the most obvious solutions to a plaque of animals. Hunting animals might be an obvious solution however we will look at how sustainable this solution is in the long term since introducing hunters does not actually impact the carrying capacity of an ecosystem. To model this we start at the base case 
+$$
+\frac{dP(t)}{dt} = RP(t)(1-\frac{P(t)}{M})
+$$
+expanded this looks like 
+$$
+\frac{dP(t)}{dt} = RP(t)-\frac{RP^2(t)}{M}
+$$
+we need to add an extra negative term for the hunters. The amount of hunters would be proporortional to the size of the population of the rabbits
+$$
+H(t) = C_1 P(t)
+$$
+Where H is the amount of hunters and $C_1$ is a constant. Those hunters will impact the population of rabbits so a hunter term is added to the base case
+$$
+\frac{dP(t)}{dt} = RP(t)-\frac{RP^2(t)}{M} - \beta H(t)
+$$
+$\beta$ is the amount representing the amount 1 hunter can kill per day. However since we know $H(t)$ we can resubtitute this back into the equation
+$$
+\frac{dP(t)}{dt} = RP(t)-\frac{RP^2(t)}{M} - \beta C_1 P(t)
+$$
+$\beta $ is also depended on the population of rabbits, since its easier to find and kill a rabbit if there are a lot per square kilometer. Therefore beta is proportional to population of rabbits per square killometer
+$$
+\beta = C_2 \frac{P(t)}{A}
+$$
+
+$$A = \text{The area of australia}$$
+Substituting this will get 
+$$
+\frac{dP(t)}{dt} = RP(t)-\frac{RP^2(t)}{M} - C_2 C_1 \frac{P^2(t)}{A}
+$$
+
+Lets assume a hunter can cover a area of 10 square kilometers per day and is $50\%$ effective then $C_2 = 5$. For  $C_1$ let assume 1 hunter is hired per 1000 rabbits so $C_1 = \frac{1}{1000}$
 \section{Introducing a preditor: The Red Fox}
 Australia 7 616 666 square kilometer land, of which 1 371 000 square kilometer is desert. Knowing that red foxes don't live in the desert, they have about 7 479 566 square kilometer land to live on. The red fox has a territory that ranges one to two miles from its home. Assuming that the territory of a red fox is circular with a radius of one mile, this means that the area a red fox needs is $\pi*1^2$ which is equal to about 3.14 square mile per fox. Converting this to square kilometer, the fox needs about 8.13 square kilometer of space. This means that Australia can house about 919 996 red foxes, without getting overcrowded. As foxes reproduce every 51 days and get on avarage 5 pups per two foxes, meaning that every fox wil get 2.5 pups in 51 days on avarage. This means that the birth rate is about 0.0245 pups per fox per day. Red foxes live nine years on avarage. This means that the death rate is about 0.0003044 deaths per fox per day.
 
