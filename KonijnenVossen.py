@@ -39,7 +39,7 @@ def derifk(xk, xf):
 	return (bk-dk)*xk*(1-ck*xk)-ak*xk*xf
 
 def deriff (xf, xk):
-   return (bf-df)*xf-af*xf*xf+cf*xf*xk
+   return (bf-df)*xf*(1-cf*xf)+cf*xf*xk
 
 for i in range (1, n_steps + 1):
     Pk = Pk_arr[i-1]
@@ -57,7 +57,7 @@ fig = plt.figure()                      # create figure
 plt.plot(t_arr, Pk_arr, linewidth = 4, label = "Rabbits")   # plot population vs. time
 plt.plot(t_arr, Pf_arr, linewidth = 4, label = "Foxes")
 
-plt.title('Solutions for dPk/dt = (bk-dk)*Pk*(1-ck*Pk)-ak*Pk*Pf \n and dPf/dt = (bf-df)*Pf-af*Pf*Pf+cf*Pf*Pk', fontsize = 10)  
+plt.title('Solutions for dPk/dt = (bk-dk)*Pk*(1-ck*Pk)-ak*Pk*Pf \n and dPf/dt = (bf-df)*Pf*(1-Pf/Mf)+cf*Pf*Pk', fontsize = 10)  
 plt.xlabel('t (in days)', fontsize = 20)
 plt.ylabel('P(t)', fontsize = 20)
 
