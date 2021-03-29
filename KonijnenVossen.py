@@ -67,4 +67,4 @@ plt.legend()
 plt.grid(True)                          # show grid                # define the axes
 plt.show()                              # show the plot
 # save the figure as .jpg
-fig.savefig('Rainbowfish.jpg', dpi=fig.dpi, bbox_inches = "tight")
+#fig.savefig('Rainbowfish.jpg', dpi=fig.dpi, bbox_inches = "tight")
