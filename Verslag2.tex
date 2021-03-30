@@ -131,7 +131,27 @@ $$
 $$
 
 Lets assume a hunter can cover a area of 10 square kilometers per day and is $50\%$ effective then $C_2 = 5$. For  $C_1$ we can use the equilibrium to determine a suitable constant. 
-$$= RP(t)-\frac{RP^2(t)}{M} - C_2 C_1 \frac{P^2(t)}{A} = 0$$
+$$RP(t)-\frac{RP^2(t)}{M} - C_2 C_1 \frac{P^2(t)}{A} = 0$$
+$$ R-\frac{RP(t)}{M} - C_2 C_1 \frac{P(t)}{A} = 0, P = 0 $$
+$$ C_1 = \frac{R-\frac{RP(t)}{M}}{C_2 \frac{P(t)}{A}} $$
+
+Now we can choose a population of rabbits that we deem apporopiate and find $C_1$
+\\
+\includegraphics[scale=0.4]{Pictures/C_1-P}
+\\
+The amount of hunters was determined by 
+$$H(t) = C_1 P(t)$$
+$$ C_1 = \frac{R-\frac{RP(t)}{M}}{C_2 \frac{P(t)}{A}} $$
+$$H=\frac{R-\frac{RP}{M}}{C_2 \frac{P}{A}}P$$
+$$H = A\frac{R-\frac{RP}{M}}{C_2}$$
+\\
+\includegraphics[scale=0.3]{Pictures/H-P}
+\\
+From this graph we can see that if we want for example an equilibrium of 1000 rabbits we would pick $C_1 = 149.124418706$ which would mean we would need to hire 149124.418706 hunters and if we use eulers method to solve for P we would indeed find that this is correct
+\\
+\includegraphics[scale=0.5]{Pictures/1000H}
+\\
+However this is not realistic for two main reasons. First of all the population is highly unstable because if we pick $C_1 = 14.9124310435$ because we want a population of 10000 we would need to hire 149124.310435 hunters to keep te population stable which is only 0.108271790959 more hunters than for a stable population if 1000
 
 \section{Introducing a preditor: The Red Fox}
 Australia 7 616 666 square kilometer land, of which 1 371 000 square kilometer is desert. Knowing that red foxes don't live in the desert, they have about 7 479 566 square kilometer land to live on. The red fox has a territory that ranges one to two miles from its home. Assuming that the territory of a red fox is circular with a radius of one mile, this means that the area a red fox needs is $\pi*1^2$ which is equal to about 3.14 square mile per fox. Converting this to square kilometer, the fox needs about 8.13 square kilometer of space. This means that Australia can house about 919 996 red foxes, without getting overcrowded. As foxes reproduce every 51 days and get on avarage 5 pups per two foxes, meaning that every fox wil get 2.5 pups in 51 days on avarage. This means that the birth rate is about 0.0245 pups per fox per day. Red foxes live nine years on avarage. This means that the death rate is about 0.0003044 deaths per fox per day.
