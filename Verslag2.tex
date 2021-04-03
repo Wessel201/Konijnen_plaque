@@ -193,15 +193,18 @@ $$\alpha_f + c_f*\overline{K}-a_f*\overline{F}=0$$
 As the extra birthrate should be depend on the amount of rabbits, amount of foxes, the extra deathrate and the growth rate of the foxes, where $c_f$ is the extra birthrate dependent on the amount of food and $\overline{K}$ is the amount of rabbits in the equilibrium situation where
 $$\overline{K}=12395840734$$
 This means that we can find $c_f$ with the following formula
-$$c_f=\frac{-\alpha+a_f*\overline{F}}{\overline{K}}$$
-$$c_f=\frac{-\alpha+\frac{\alpha}{\overline{F}}*\overline{F}}{\overline{K}}$$
+$$c_f=\frac{-\alpha_f+a_f*\overline{F}}{\overline{K}}$$
+$$c_f=\frac{-\alpha_f+\frac{\alpha}{\overline{F}}*\overline{F}}{\overline{K}}$$
 So we find that $c_f=0$. This means that the differential equation becomes 
 $$\frac{dP_f(t)}{dt}=(b_f-d_f)*P_f*(1-\frac{P_f}{M_f})$$
 We find that, as red foxes eat around 500 grams of food per day, a red fox eats about 0.25 rabbits a day when available, but their diet is dependent on how easy accessible the rabbits are, so more rabbits, means it's easier for the foxes to eat he rabbits. We find the extra deathrate due to foxes with the following formula, as this is dependent on the amount of foxes and the amount of rabbits.
 $$a_k*\overline{F}*\overline{K}=0.25*\overline{F}$$
 So we find now that we can find the extra deaths of rabbits due to foxes with
 $$a_k=\frac{0.25}{\overline{K}}$$
-Which means that $a_k=2.0168*10^{-11}$.
+Which means that $a_k=2.0168*10^{-11}$. This means we have the following derivative equations
+$$\frac{dP_k}{dt}=(b_k-d_k)*P_k*(1-\frac{P_k}{M_k})-a_k*P_k*P_f$$
+and
+$$\frac{dP_f}{dt}=(b_f-d_f)*P_f*(1-\frac{P_f}{M_f})$$
 \\In the following graph the situation is plotted where there are 10000000000 rabbits and 919996 foxes, which is about the amount of rabbits Australia has when they had their big rabbit plague and the maximum amount of foxes that can live in Australia. In the graph one can see that due to the low maximum amount of foxes that can live in Australia, they don't do much to the rabbits, where they grow their amount to the equilibrium of $1.23935344*10^10$. The foxes have their equilibrium around $919996$. As the foxes only eat around 0.25 rabbit per fox at the most, they don't do much as a relatively small number of foxes can be housed in Australia in comparison to the amount of rabbits. 
 \begin{center}
     \includegraphics[scale=0.78]{Pictures/RabbitFoxes.png}
@@ -213,10 +216,10 @@ Which means that $a_k=2.0168*10^{-11}$.
 %https://ofnc.ca/programs/fletcher-wildlife-garden/flora-and-fauna-at-the-fwg/red-foxes-at-the-fwg
 \section{Introducing a preditor: The Grey Wolf}
 Knowing that red foxes take up to much space for the amount of rabbits they eat, introducing another preditor instead of red foxes, that live in groups on a territory and eat more rabbits per day, may work. In this case we look at wolves, as they live in packs and eat around ten times as much as a red fox. Grey wolves need to eat about five to seven pounds per wolf per day, as we assume they reproduce constantly. This means they eat 2.26796 to 3.17515 kilogram per day per wolf. Using the avarage of this, we get that a wolf eats 2.721555 kilogram a day. As we use rabbits of around 2 kilograms, a wolf eats around 1.3607775 rabbit a day in the optimal circumstances. As grey wolves hava a gestation period of on average 63 days  and they have 4 to 6 pups on average, the birth rate on average is about 0.03968 pups per day per wolf. As the territory of a pack, which is on average consisting of 7 wolves, is around 70 to 700 square miles. As we want as much wolves as possible on the continent of Australia, we use 70 square miles, or about 181.3 for a pack of 7 wolves. This means that with around 7 479 566 square kilometer of land to live on, since wolves don't live in deserts, there is space for 41 255 packs of grey wolves. As wolves live in packs of on average 7 wolves, there is space in Australia for 288 785 wolves. As wolves live up to 6 to 10 years in the wild, so on average 8 years. This means that the deathrate is around 0.00034247 deaths per wolf per day. 
-Let $R_f$ be the reproduction number.
-$$R_f = b_f - d_f$$
-$$b_f = 0.03968$$
-$$d_f = 0.00034247$$
+Let $R_w$ be the reproduction number.
+$$R_w = b_w - d_w$$
+$$b_w = 0.03968$$
+$$d_w = 0.00034247$$
 $$\frac{dP_w(t)}{dt} = R_wP_w(t)(1-\frac{P_w(t)}{M_w})$$
 $$M_w = 919996$$
 \\
@@ -242,7 +245,10 @@ As grey wolves eat around 1.3607775 rabbit per day in optimal circumstances. The
 $$a_k*\overline{W}*\overline{K}=1.3607775*\overline{W}$$
 This means that the extra deaths of rabbits due to being eaten by wolves is 
 $$a_k=\frac{1.3607775}{\overline{K}}$$
-So $a_k=1.0978*10^{-10}$.
+So $a_k=1.0978*10^{-10}$. So the derivative equations we get are
+$$\frac{dP_k}{dt}=(b_k-d_k)*P_k*(1-\frac{P_k}{M_k})-a_k*P_k*P_w$$
+and 
+$$\frac{dP_w}{dt}=(b_w-d_w)*P_w*(1-\frac{P_w}{M_f})$$
 \\As the following graph depicts, the amount of rabbits grow to its equilibrium of $1.23919001*10^{10}$ (from around 10000000000) and the wolves find their equilbrium around $288785$. In the graph is visible that wolves also don't do much to decimate the population of rabbits, due to the small number of wolves that can live on Australia and the fact that they don't eat enough rabbits to do much to their numbers.
 \begin{center}
     \includegraphics[scale=0.78]{Pictures/RabbitWolves.png}
