@@ -8,6 +8,8 @@
 \usepackage{natbib}
 \bibliographystyle{apalike}
 \usepackage[nottoc]{tocbibind}
+\usepackage{appendix}
+\usepackage{listings}
 
 
 \author{Qing Scholten, Wessel van Sommeren}
@@ -21,8 +23,8 @@
 \newpage
 
 \section{Introduction}
-In 1859 the First Fleet of settlers arrived in Australia, with them Thomas Austin. Thomas Austin took 13 European rabbits with him on his journey, so that once in Australia he could set them free so that he could hunt them for food. What Thomas Austin did not know was that these European rabbits did not have any natural predators or competition in australia. So by 1920 the small population of 13 rabbits had turned into a rabbit plaque, in 1920 there were an estimated 10 billion rabbits in australia.In this paper we will attempt to model the rabbit plaque of australia by exploring the question "What is the most effective way to control a rabbit plaque comparing Hunting, Introducing a predator and Introducing a Competitor 
-\section{Base case}
+In 1859 the First Fleet of settlers arrived in Australia, with them Thomas Austin. Thomas Austin took 13 European rabbits with him on his journey, so that once in Australia he could set them free so that he could hunt them for food. What Thomas Austin did not know was that these European rabbits did not have any natural predators or competition in australia. So by 1920 the small population of 13 rabbits had turned into a rabbit plaque, in 1920 there were an estimated 10 billion rabbits in australia.In this paper we will attempt to model the rabbit plaque of australia by exploring the question "What is the most effective way to control a rabbit plaque comparing Hunting and Introducing predators?".
+\section{Rabbit population growth}
 For the base case we use the fact that a rabbit on average gets 4 - 8 babies per 60 days. So we take 6 on average that means one rabbit produces 0.1 rabbit per day. A rabbit in the wild live up to 9 nine years this means 0.000312109862672 rabbits die per day per rabbit. This means we get 
 $$
 \frac{dP(t)}{dt} = 0.1P(t)-0.000312109862672P(t)
@@ -111,7 +113,7 @@ expanded this looks like
 $$
 \frac{dP(t)}{dt} = RP(t)-\frac{RP^2(t)}{M}
 $$
-we need to add an extra negative term for the hunters. The amount of hunters would be proporortional to the size of the population of the rabbits
+we need to add an extra negative term for the hunters. The amount of hunters would be proportional to the size of the population of the rabbits
 $$
 H(t) = C_1 P(t)
 $$
@@ -119,11 +121,11 @@ Where H is the amount of hunters and $C_1$ is a constant. Those hunters will imp
 $$
 \frac{dP(t)}{dt} = RP(t)-\frac{RP^2(t)}{M} - \beta H(t)
 $$
-$\beta$ is the amount representing the amount 1 hunter can kill per day. However since we know $H(t)$ we can resubtitute this back into the equation
+$\beta$ is the amount representing the amount 1 hunter can kill per day. However since we know $H(t)$ we can re substitute this back into the equation
 $$
 \frac{dP(t)}{dt} = RP(t)-\frac{RP^2(t)}{M} - \beta C_1 P(t)
 $$
-$\beta $ is also depended on the population of rabbits, since its easier to find and kill a rabbit if there are a lot per square kilometer. Therefore beta is proportional to population of rabbits per square killometer
+$\beta $ is also depended on the population of rabbits, since its easier to find and kill a rabbit if there are a lot per square kilometer. Therefore beta is proportional to population of rabbits per square kilometer
 $$
 \beta = C_2 \frac{P(t)}{A}
 $$
@@ -168,8 +170,8 @@ $$\text{cost} = A\frac{R-\frac{RP}{M}}{C_2}(35000  -15C_2 \frac{P}{A}) $$
 
 
 
-\section{Introducing a preditor: The Red Fox}
-Australia 7 616 666 square kilometer land, of which 1 371 000 square kilometer is desert. Knowing that red foxes don't live in the desert, they have about 7 479 566 square kilometer land to live on. The red fox has a territory that ranges one to two miles from its home. Assuming that the territory of a red fox is circular with a radius of one mile, this means that the area a red fox needs is $\pi*1^2$ which is equal to about 3.14 square mile per fox.\cite{FoxTerritoryReproduction} Converting this to square kilometer, the fox needs about 8.13 square kilometer of space. This means that Australia can house about 919 996 red foxes, without getting overcrowded. As foxes reproduce every 51 days and get on avarage 5 pups per two foxes, meaning that every fox wil get 2.5 pups in 51 days on avarage.\cite{FoxTerritoryReproduction} This means that the birth rate is about 0.0245 pups per fox per day. Red foxes live nine years on avarage.\cite{FoxLife} This means that the death rate is about 0.0003044 deaths per fox per day.
+\section{Introducing a predator: The Red Fox}
+Australia 7 616 666 square kilometer land, of which 1 371 000 square kilometer is desert. Knowing that red foxes don't live in the desert, they have about 7 479 566 square kilometer land to live on. The red fox has a territory that ranges one to two miles from its home. Assuming that the territory of a red fox is circular with a radius of one mile, this means that the area a red fox needs is $\pi*1^2$ which is equal to about 3.14 square mile per fox.\cite{FoxTerritoryReproduction} Converting this to square kilometer, the fox needs about 8.13 square kilometer of space. This means that Australia can house about 919 996 red foxes, without getting overcrowded. As foxes reproduce every 51 days and get on average 5 pups per two foxes, meaning that every fox wil get 2.5 pups in 51 days on average.\cite{FoxTerritoryReproduction} This means that the birth rate is about 0.0245 pups per fox per day. Red foxes live nine years on average.\cite{FoxLife} This means that the death rate is about 0.0003044 deaths per fox per day.
 
 Let $R_f$ be the reproduction number.
 $$R_f = b_f - d_f$$
@@ -218,14 +220,14 @@ $$\frac{dP_f}{dt}=(b_f-d_f)*P_f*(1-\frac{P_f}{M_f})$$
     \caption{Solutions for $\frac{dP_k}{dt}=(b_k-d_k)*P_k*(1-\frac{P_k}{M_k})-a_k*P_k*P_f$ and $\frac{dP_f}{dt}=(b_f-d_f)*P_f*(1-\frac{P_f}{M_f})$, where the rabbits start at $10*10^{10}$ and the foxes start at $919996$}
     \label{fig:RabbitFoxes}
 \end{figure}
-In Figure \ref{fig:RabbitFoxes} the situation is plotted where there are 10000000000 rabbits and 919996 foxes, which is about the amount of rabbits Australia has when they had their big rabbit plague and the maximum amount of foxes that can live in Australia. In the graph one can see that due to the low maximum amount of foxes that can live in Australia, they don't do much to the rabbits, where they grow their amount to the equilibrium of $1.23935344*10^10$. The foxes have their equilibrium around $919996$. As the foxes only eat around 0.25 rabbit per fox at the most, they don't do much as a relatively small number of foxes can be housed in Australia in comparison to the amount of rabbits. 
+In Figure \ref{fig:RabbitFoxes} the situation is plotted where there are 10000000000 rabbits and 919996 foxes, which is about the amount of rabbits Australia has when they had their big rabbit plague and the maximum amount of foxes that can live in Australia. In the graph one can see that due to the low maximum amount of foxes that can live in Australia, they don't do much to the rabbits, where they grow their amount to the equilibrium of $1.23935344*10^10$. The foxes have their equilibrium around $919996$. As the foxes only eat around 0.25 rabbit per fox at the most, they don't do much as a relatively small number of foxes can be housed in Australia in comparison to the amount of rabbits. The code for this model can be found in appendix \ref{FoxRabbitModel}.
 %https://cosleyzoo.org/red-fox/#:~:text=Shelter%20and%20Space%20Needs&text=The%20normal%20territory%20of%20the,remarkably%20to%20cohabitation%20with%20humans.
 %https://ofnc.ca/programs/fletcher-wildlife-garden/flora-and-fauna-at-the-fwg/red-foxes-at-the-fwg
 %https://www.nhm.ac.uk/discover/the-secret-life-of-urban-foxes.html#:~:text=Wild%20red%20foxes%20generally%20live,between%20one%20and%20three%20years.
 %https://www.wildlifeonline.me.uk/animals/article/red-fox-diet-how-much-food#:~:text=Again%2C%20this%20is%20a%20deceptively,pound)%20of%20food%20per%20day.
 %https://ofnc.ca/programs/fletcher-wildlife-garden/flora-and-fauna-at-the-fwg/red-foxes-at-the-fwg
-\section{Introducing a preditor: The Grey Wolf}
-Knowing that red foxes take up to much space for the amount of rabbits they eat, introducing another preditor instead of red foxes, that live in groups on a territory and eat more rabbits per day, may work. In this case we look at wolves, as they live in packs and eat around ten times as much as a red fox. Grey wolves need to eat about five to seven pounds per wolf per day, as we assume they reproduce constantly.\cite{WolfFood} This means they eat 2.26796 to 3.17515 kilogram per day per wolf. Using the average of this, we get that a wolf eats 2.721555 kilogram a day. As we use rabbits of around 2 kilograms, a wolf eats around 1.3607775 rabbit a day in the optimal circumstances. As grey wolves have a gestation period of on average 63 days  and they have 4 to 6 pups on average, the birth rate on average is about 0.03968 pups per day per wolf.\cite{WolfRepLifeTer} As the territory of a pack, which is on average consisting of 7 wolves, is around 70 to 700 square miles.\cite{WolfRepLifeTer} As we want as much wolves as possible on the continent of Australia, we use 70 square miles, or about 181.3 for a pack of 7 wolves. This means that with around 7 479 566 square kilometer of land to live on, since wolves don't live in deserts, there is space for 41 255 packs of grey wolves. As wolves live in packs of on average 7 wolves, there is space in Australia for 288 785 wolves.\cite{WolfRepLifeTer} As wolves live up to 6 to 10 years in the wild, so on average 8 years.\cite{WolfRepLifeTer} This means that the deathrate is around 0.00034247 deaths per wolf per day. 
+\section{Introducing a predator: The Grey Wolf}
+Knowing that red foxes take up to much space for the amount of rabbits they eat, introducing another predator instead of red foxes, that live in groups on a territory and eat more rabbits per day, may work. In this case we look at wolves, as they live in packs and eat around ten times as much as a red fox. Grey wolves need to eat about five to seven pounds per wolf per day, as we assume they reproduce constantly.\cite{WolfFood} This means they eat 2.26796 to 3.17515 kilogram per day per wolf. Using the average of this, we get that a wolf eats 2.721555 kilogram a day. As we use rabbits of around 2 kilograms, a wolf eats around 1.3607775 rabbit a day in the optimal circumstances. As grey wolves have a gestation period of on average 63 days  and they have 4 to 6 pups on average, the birth rate on average is about 0.03968 pups per day per wolf.\cite{WolfRepLifeTer} As the territory of a pack, which is on average consisting of 7 wolves, is around 70 to 700 square miles.\cite{WolfRepLifeTer} As we want as much wolves as possible on the continent of Australia, we use 70 square miles, or about 181.3 for a pack of 7 wolves. This means that with around 7 479 566 square kilometer of land to live on, since wolves don't live in deserts, there is space for 41 255 packs of grey wolves. As wolves live in packs of on average 7 wolves, there is space in Australia for 288 785 wolves.\cite{WolfRepLifeTer} As wolves live up to 6 to 10 years in the wild, so on average 8 years.\cite{WolfRepLifeTer} This means that the deathrate is around 0.00034247 deaths per wolf per day. 
 Let $R_w$ be the reproduction number.
 $$R_w = b_w - d_w$$
 $$b_w = 0.03968$$
@@ -268,9 +270,16 @@ $$\frac{dP_w}{dt}=(b_w-d_w)*P_w*(1-\frac{P_w}{M_f})$$
     \caption{Solutions for $\frac{dP_k}{dt}=(b_k-d_k)*P_k*(1-\frac{P_k}{M_k})-a_k*P_k*P_f$ and $\frac{dP_w}{dt}=(b_w-d_w)*P_w*(1-\frac{P_w}{M_w})$, where the rabbits start at $1.0*10^{10}$ and the wolves at $288785$.}
     \label{fig:RabbitsWolves}
 \end{figure}
-As the Figure \ref{fig:RabbitsWolves} depicts, the amount of rabbits grow to its equilibrium of $1.23919001*10^{10}$ (from around 10000000000) and the wolves find their equilbrium around $288785$. In the graph is visible that wolves also don't do much to decimate the population of rabbits, due to the small number of wolves that can live on Australia and the fact that they don't eat enough rabbits to do much to their numbers.
+As the Figure \ref{fig:RabbitsWolves} depicts, the amount of rabbits grow to its equilibrium of $1.23919001*10^{10}$ (from around 10000000000) and the wolves find their equilbrium around $288785$. In the graph is visible that wolves also don't do much to decimate the population of rabbits, due to the small number of wolves that can live on Australia and the fact that they don't eat enough rabbits to do much to their numbers. The code used for this model can be found in appendix \ref{WolfRabbitModel}.
 %https://wolf.org/wolf-info/basic-wolf-info/wolf-faqs/#toggle-id-19
 %https://wolfhaven.org/conservation/wolves/basic-facts-about-gray-wolves/
+\section{Conclusion}
+We find that introducing a natural predator to the rabbits won't work, as they do not eat enough rabbits per predator and need too much space. This means that Australia can not house enough predators to have an effect on the rabbit population.
 \medskip
 \bibliography{MyRef}
+\appendix
+\section{Code of the Fox-Rabbit model}\label{FoxRabbitModel}
+\lstinputlisting[language=python]{KonijnenVossen.py}
+\section{Code of the Wolf-Rabbit model}\label{WolfRabbitModel}
+\lstinputlisting[language=python]{RabbitsWolves.py}
 \end{document}
