@@ -38,6 +38,7 @@
 \tableofcontents
 \newpage
 \section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
 During this research we have simulated the rabbit plague of Australia in 1920. In order to solve this problem we have looked at three possible solutions: using hunters to shoot rabbits, introducing red foxes and introducing grey wolves. All three cases have been simulated in a model using Euler's method. We have concluded that introducing the red foxes or grey wolves does not work, as they take up too much space for the amount of rabbits they eat. Also we have concluded that using hunters may work, as long as there are enough hunters to control the rabbit population.
 \section*{List of Variables}
 \addcontentsline{toc}{section}{List of Variables}
@@ -45,7 +46,7 @@ During this research we have simulated the rabbit plague of Australia in 1920. I
 \begin{tabular}{lll}
  $P_r$&Rabbit population&Rabbits\\
  $R_r$&Reproduction number of rabbits&$0.099687890137328$ rabbits per day per rabbit\\
- $M_r$&Maximum amount of rabbits Australia can house&$12395840734$ rabbits\\
+ $M_r$&Maximum amount of rabbits&$12395840734$ rabbits\\
  $H$&Hunter population&Hunters\\
  $\beta$&Amount of prey one hunter can kill per day&Rabbits per hunter per day\\
  $A$&Area of Australia&$7 479 566 km^2$\\
@@ -53,7 +54,7 @@ During this research we have simulated the rabbit plague of Australia in 1920. I
  $b_f$&Birth rate foxes&$0.0245$ foxes per day per fox\\
  $d_f$&Death rate foxes&$0.0003044$ foxes per day per fox\\
  $P_f$&Fox population&Foxes\\
- $M_f$&Maximum amount of foxes Australia can house&$919996$ foxes\\
+ $M_f$&Maximum amount of foxes&$919996$ foxes\\
  $a_f$&Extra deathrate of foxes&$0.000000063$ foxes per day per fox\\
  $\overline{F}$&Foxes at equilibrium&$919996$ foxes\\
  $\overline{R}$&Rabbits at equilibrium&$12395840734$ rabbits\\
@@ -63,8 +64,8 @@ During this research we have simulated the rabbit plague of Australia in 1920. I
  $b_w$&Birth rate wolves&$0.03968$ wolves per wolf per day\\
  $d_w$&Death rate wolves&$0.00034247$ wolves per wolf per day\\
  $P_w$&Wolf population&Wolves\\
- $M_w$&Maximum amount of wolves Australia can house&$288785$ wolves\\
- $a_w$&Extra deathrate of wolves&$1.3621735893484772*10^{-7}$ wolves per wolf per day\\
+ $M_w$&Maximum amount of wolves&$288785$ wolves\\
+ $a_w$&Extra death rate of wolves&$1.3621735893484772*10^{-7}$ wolves per wolf per day\\
  $\overline{W}$&Wolves at equilibrium&$288784$ wolves\\
  $c_w$&Extra birthrate of wolves&$0$ wolves per day per wolf\\
  $a_{rw}$&Extra death rate of rabbits due to wolves&$1.0978*10^{-10}$ rabbits per rabbit per wolf per day
