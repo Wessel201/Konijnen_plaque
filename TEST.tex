@@ -37,6 +37,8 @@
 \end{titlepage}
 \tableofcontents
 \newpage
+\section*{Abstract}
+During this research we have simulated the rabbit plague of Australia in 1920. In order to solve this problem we have looked at three possible solutions: using hunters to shoot rabbits, introducing red foxes and introducing grey wolves. All three cases have been simulated in a model using Euler's method. We have concluded that introducing the red foxes or grey wolves does not work, as they take up too much space for the amount of rabbits they eat. Also we have concluded that using hunters may work, as long as there are enough hunters to control the rabbit population.
 \section*{List of Variables}
 \addcontentsline{toc}{section}{List of Variables}
 \begin{table}[h!]
@@ -348,7 +350,7 @@ $$\frac{dP_w}{dt}=(b_w-d_w)*P_w*(1-\frac{P_w}{M_w})$$
     \label{fig:RabbitsWolves}
 \end{figure}
 As the Figure \ref{fig:RabbitsWolves} depicts, the amount of rabbits grow to its equilibrium of $1.23919001*10^{10}$ (from around 10000000000) and the wolves find their equilbrium around $288785$. In the graph is visible that wolves also don't do much to decimate the population of rabbits, due to the small number of wolves that can live on Australia and the fact that they don't eat enough rabbits to do much to their numbers. The code used for this model can be found in appendix \ref{WolfRabbitModel}.
-\section{Conclusion}
+\section{Conclusions}
 We find that introducing a natural predator to the rabbits won't work, as they do not eat enough rabbits per predator and need too much space. This means that Australia can not house enough predators to have an effect on the rabbit population. On the other hand the hunter model shows some serious potential. If the government makes sure there are enough hunters the population can be controlled to a reasonable level, whilst keeping the cost low. However this model does assume that the government intervenes immediately.
 
 \bibliography{MyRef}
